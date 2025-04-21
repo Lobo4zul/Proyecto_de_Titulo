@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menú de Comida</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+    <a class="navbar-brand" href="#"><img src="assets/logo.jpg" alt="Logo" width="80" /></a>
+    <div class="mx-auto">
+      <a class="nav-link d-inline px-3" href="#bebestibles">Bebestibles</a>
+      <a class="nav-link d-inline px-3" href="#comida">Comida</a>
+      <a class="nav-link d-inline px-3" href="#combos">Combos</a>
+    </div>
+    <div class="d-flex align-items-center">
+      <div class="position-relative">
+        <img src="assets/cart.png" alt="Carrito" id="carritoBtn" width="30" style="cursor:pointer;" />
+        <span id="contadorCarrito" class="badge bg-danger position-absolute top-0 start-100 translate-middle">0</span>
+      </div>
+      <a href="cocina.html" class="btn btn-outline-dark ms-3">Ir a Cocina</a>
+    </div>
+  </nav>
+
+  <!-- Productos -->
+  <div class="container my-4" id="contenedorProductos">
+    <h3 class="text-center" id="tituloCategoria">Selecciona una categoría</h3>
+    <div class="row" id="productosGrid"></div>
+  </div>
+
+  <!-- Modal Producto -->
+  <div class="modal fade" id="modalProducto" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Seleccionar cantidad</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p id="nombreProductoSeleccionado"></p>
+          <input type="number" id="cantidadSeleccionada" min="1" value="1" class="form-control w-50 mx-auto" />
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button class="btn btn-primary" id="aceptarProducto">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Carrito -->
+  <div class="modal fade" id="modalCarrito" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Tu Pedido</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="carritoContenido"></div>
+        <div class="modal-footer">
+          <button class="btn btn-success" id="pagarBtn">Pagar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
